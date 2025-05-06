@@ -1,0 +1,24 @@
+    /*
+    Implement a function diff that calculates the 
+    absolute difference between two integers.
+
+diff(5, 2) = 3
+
+diff(2, 5) = 3
+    */
+	
+public Integer diff(Integer a, Integer b) {
+    //code here
+
+
+
+	Integer difference;
+    if(a > b){
+        difference = a - b;
+        return difference;
+    } else {
+
+        difference = (b - a);
+        return difference;
+    }
+}

@@ -1,0 +1,41 @@
+public Boolean isEndWithZero(Integer num){
+
+    /*
+    Given an integer, return true if the integer ends with 0, 
+    otherwise return false.
+
+    isEndWithZero(12) == false
+
+    isEndWithZero(1230) == true
+    */
+    /* There are two ways to solve this problem one by converting it into string
+    second way is to mathermatic way*/
+
+     //code here
+
+     /*
+        The first way to convert the number into string     
+     */
+
+
+    /* string newNumber = String.valueOf(num);
+
+     if (newNumber.endsWith('0')) {
+         return true;
+     } else {
+         return false;
+     }*/
+
+
+     /*Second way is by doing the simple maths*/
+
+
+     Integer reminder = math.mod(num,10);
+
+     if (reminder == 0 || num == 0){
+         return true;
+     } else {
+         return false;
+     }
+
+}
