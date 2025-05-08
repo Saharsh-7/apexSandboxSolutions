@@ -1,0 +1,15 @@
+public Integer sumToN(Integer n) {
+
+    /*
+    Implement the method sumToN that calculates and returns the sum of all numbers (inclusive) from 1 to n. Assume that n will be non-zero positive integer.
+    */
+    //code here
+
+    Integer sum = 0;
+
+    for (Integer i = n; i >= 0; i--) {
+        sum += i;
+    }
+
+    return sum;
+}

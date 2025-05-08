@@ -1,0 +1,18 @@
+public String formatName(String firstName, String lastName) {
+    
+    /*
+        Given two non-empty strings firstName and lastName, return the name as a single string with a space in between (firstName lastName).
+
+        formatName('Jane', 'Doe') = 'Jane Doe'
+    
+    */
+    
+    
+    //code here
+
+    String fullName = firstName + ' ' + lastName;
+
+    return fullName;
+
+
+}
