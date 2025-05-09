@@ -1,0 +1,218 @@
+/*
+	13:50 and 01:50 PM are 24-hour and 12-hour representations of the same time. Implement the method changeTimeFormat 
+	that takes as input a string strTime formatted as a 24-hour string, and returns the equivalent 12-hour string.
+
+Examples:
+
+changeTimeFormat('08:05') returns '08:05 AM'
+
+changeTimeFormat('00:05') returns '12:05 AM'
+
+changeTimeFormat('23:15') returns '11:15 PM'
+*/
+
+public String changeTimeFormat(String strTime) {
+     //code here
+	
+        /*here, substringBefore and substringAfter will give the hours and minute in the string format*/
+    String hourInString = strTime.substringBefore(':');
+    String minInString = strTime.substringAfter(':');
+	
+   	 /**System.debug('hourInString: ' + hourInString);
+     System.debug('minInString: ' + minInString);  */ 
+    
+    /*Integer.valueOf will convert the string into the integer*/
+    Integer hourInNumber = Integer.valueOf(hourInString);
+    Integer minInNumber = Integer.valueOf(minInString);
+    System.debug('hourInNumber: ' + hourInNumber);
+    System.debug('minInNumber: ' + minInNumber);
+	
+    /*Initializing the empty string to contain hour, minute and the new time in it*/
+    String hour = '';
+    String min = ''; 
+    String newTime = '';
+    
+    /*Swith case for minutes which lies between 0 to 9 and appending 0 in 
+     * starting and converting it into string again
+	*/
+    switch on minInNumber {
+		    	
+        when 0{
+			min += '0' + String.valueOf(minInNumber); 
+            //System.debug('min: ' + min);
+        }when 1 {
+			min += '0' + String.valueOf(minInNumber); 
+            //System.debug('min: ' + min);
+        }when 2{
+			min += '0' + String.valueOf(minInNumber); 
+            //System.debug('min: ' + min);
+        }when 3{
+			min += '0' + String.valueOf(minInNumber); 
+            //System.debug('min: ' + min);
+        }when 4{
+			min += '0' + String.valueOf(minInNumber);            
+        }when 5{
+			min += '0' + String.valueOf(minInNumber); 
+            //System.debug('min: ' + min);
+        }when 6{
+			min += '0' + String.valueOf(minInNumber); 
+            //System.debug('min: ' + min);
+        } when 7{
+			min += '0' + String.valueOf(minInNumber);            
+            //System.debug('min: ' + min);
+        } when 8{
+			min += '0' + String.valueOf(minInNumber); 
+            //System.debug('min: ' + min);
+        }when 9{
+			min += '0' + String.valueOf(minInNumber); 
+            //System.debug('min: ' + min);
+        } when else {
+            min += String.valueOf(minInNumber);
+        }
+        
+    }
+	/*
+	checking the number is in 'A.M' or 'P.M' 
+	if the number is greater than 12 than substrating it by 12 and appending zero if it's lie 
+	between 1 to 9 and adding 'P.M' at the end 
+	appending desired time in the newTime variable 
+	*/
+    switch on hourInNumber {
+
+        when 0 {
+             hour +=  String.valueOf(hourInNumber + 12);
+             newTime += hour + ':' + min + ' AM';
+            
+            /*System.debug('hour: ' + hour);
+            System.debug('min: ' + min);
+            System.debug('time: ' + newTime);*/
+            return newTime;
+        } when 1 {
+             hour += '0' + String.valueOf(hourInNumber);
+             
+             newTime += hour + ':' + min + ' AM';
+             return newTime;
+        } when 2 {
+            hour += '0' + String.valueOf(hourInNumber);
+             
+             newTime += hour + ':' + min + ' AM';
+             /*System.debug('hour: ' + hour);
+            System.debug('min: ' + min);
+            System.debug('time: ' + newTime);*/
+             return newTime;
+        } when 3 {
+            hour += '0' + String.valueOf(hourInNumber);
+             
+             newTime += hour + ':' + min + ' AM';
+             return newTime;
+        } when 4 {
+            hour += '0' + String.valueOf(hourInNumber);
+             
+             newTime += hour + ':' + min + ' AM';
+             return newTime;
+        } when 5 {
+            hour += '0' + String.valueOf(hourInNumber);
+             
+             newTime += hour + ':' + min + ' AM';
+             return newTime;
+        } when 6 {
+            hour += '0' + String.valueOf(hourInNumber);
+             
+             newTime += hour + ':' + min + ' AM';
+             return newTime;
+        } when 7 {
+            hour += '0' + String.valueOf(hourInNumber);
+             
+             newTime += hour + ':' + min + ' AM';
+             return newTime;
+        } when 8 {
+            hour += '0' + String.valueOf(hourInNumber);
+             
+             newTime += hour + ':' + min + ' AM';
+             return newTime;
+        } when 9 {
+            hour += '0' + String.valueOf(hourInNumber);
+             
+             newTime += hour + ':' + min + ' AM';
+             return newTime;
+        } when 10 {
+            hour = String.valueOf(hourInNumber);
+             
+             newTime += hour + ':' + min + ' AM';
+             return newTime;
+        } when 11 {
+             hour = String.valueOf(hourInNumber);
+             
+             newTime += hour + ':' + min + ' AM';
+             return newTime;
+        } when 12 {
+            hour = String.valueOf(hourInNumber);
+             
+             newTime += hour + ':' + min + ' PM';
+             return newTime;
+        } when 13 {
+            hour += '0' + String.valueOf(hourInNumber - 12);
+             
+             newTime += hour + ':' + min + ' PM';
+             return newTime;
+        } when 14 {
+            hour += '0' + String.valueOf(hourInNumber - 12);
+             
+             newTime += hour + ':' + min + ' PM';
+             return newTime;
+        } when 15 {
+            hour += '0' + String.valueOf(hourInNumber - 12);
+             
+             newTime += hour + ':' + min + ' PM';
+             return newTime;
+        } when 16 {
+            hour += '0' + String.valueOf(hourInNumber - 12);
+             
+             newTime += hour + ':' + min + ' PM';
+             return newTime;
+        } when 17 {
+           hour += '0' + String.valueOf(hourInNumber - 12);
+             
+             newTime += hour + ':' + min + ' PM';
+             return newTime;
+        } when 18 {
+           hour += '0' + String.valueOf(hourInNumber - 12);
+             
+             newTime += hour + ':' + min + ' PM';
+             
+             return newTime;
+        } when 19 {
+            hour += '0' + String.valueOf(hourInNumber - 12);
+             
+             newTime += hour + ':' + min + ' PM';
+             return newTime;
+        } when 20 {
+            hour += '0' + String.valueOf(hourInNumber - 12);
+             
+             newTime += hour + ':' + min + ' PM';
+             return newTime;
+        } when 21 {
+            hour += '0' + String.valueOf(hourInNumber - 12);
+             
+             newTime += hour + ':' + min + ' PM';
+             return newTime;
+        } when 22 {
+            hour = String.valueOf(hourInNumber - 12);
+             
+             newTime += hour + ':' + min + ' PM';
+             return newTime;
+        } when 23 {
+            hour = String.valueOf(hourInNumber - 12);
+             
+             newTime += hour + ':' + min + ' PM';
+             return newTime;
+        } when else {
+            hour += '0' + String.valueOf(hourInNumber - 24);
+             
+             newTime += hour + ':' + min + ' AM';
+             
+             return newTime;
+        }
+    }
+
+}
