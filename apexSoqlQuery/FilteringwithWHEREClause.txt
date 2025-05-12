@@ -1,0 +1,6 @@
+/*
+Retrieve all **Contact** records where the 
+**LastName** is "Smith" and the **Email** is not null.
+
+*/
+select lastName, email from contact where lastName = 'Smith' and email != null

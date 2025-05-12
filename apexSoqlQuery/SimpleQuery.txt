@@ -1,0 +1,2 @@
+//Write a SOQL query to fetch all **Account** records with their **Name** and **Industry** fields.
+select name,industry from account where name != null and industry != null

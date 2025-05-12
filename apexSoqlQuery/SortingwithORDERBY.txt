@@ -1,0 +1,7 @@
+/*
+
+Fetch the top 10 **Opportunity** records ordered 
+by **CloseDate** in descending order.
+
+*/
+select name, Amount, closeDate from opportunity order by closeDate desc limit 10

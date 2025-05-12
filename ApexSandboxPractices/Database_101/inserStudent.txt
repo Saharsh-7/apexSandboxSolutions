@@ -1,0 +1,42 @@
+/*
+
+The method insertStudent takes as input strings name and email, and returns a record ID. 
+Implement the method to insert an apxio__Student__c record with the Name and apxio__Email__c fields filled out, 
+and return the Id of the new record.
+You will be working with the following custom object and field names for this problem:
+
+apxio__Student__c
+apxio__Student__c.apxio__Email__c
+*/
+
+
+public Id insertStudent(String name, String email) {
+    // code here
+
+    // Instance of the custom object name student
+    apxio__Student__c record = new apxio__Student__c();
+
+    // Empty list of the custom object
+    List<apxio__Student__c> studentList = new List<apxio__Student__c>();
+
+    //Adding name and email into the student object name and email field
+
+    record.Name = name;
+    record.apxio__Email__c = email;
+    
+
+    // adding the detail into the list
+    studentList.add(record);
+
+
+    if (!studentList.isEmpty()) {
+        insert studentList;
+    }
+    
+    // soql query to get id,name and emails
+    List<apxio__Student__c> listOfIds = [select id from apxio__Student__c];
+
+    //returning the ids
+    return listOfIds[0].Id;
+
+}

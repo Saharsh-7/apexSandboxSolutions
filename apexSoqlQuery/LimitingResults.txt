@@ -1,0 +1,4 @@
+/*
+Get only **5** recently modified **Case** records.
+*/
+select caseNumber,contactEmail,closedDate from case order by lastModifiedDate limit 5

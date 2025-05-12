@@ -1,0 +1,8 @@
+/*
+Find all **Lead** records where the **Company** 
+name contains "Tech".
+
+*/
+
+select name,email,industry from lead where industry like '%Tech%'
+order by industry

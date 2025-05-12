@@ -1,0 +1,6 @@
+/*
+Fetch all **Opportunity** records and include the **Account Name** in the results.
+
+*/
+
+select name, amount, closeDate, account.Id, account.Name from opportunity

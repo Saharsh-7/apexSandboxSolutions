@@ -1,0 +1,9 @@
+/*
+Retrieve all **Account** records along with their 
+related **Contacts** (using a **subquery**).
+
+
+*/
+select id, name, (select id, lastName from contacts) from account
+
+
