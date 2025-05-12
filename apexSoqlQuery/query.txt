@@ -1,0 +1,101 @@
+Here are some **SOQL (Salesforce Object Query Language)** exercises ranging from **basic to advanced** to help you practice. These cover different scenarios, including filtering, relationships, aggregation, and complex queries.
+
+---
+
+## **🔹 Basic SOQL Exercises (Beginner)**
+### **1. Simple Query**
+Write a SOQL query to fetch all **Account** records with their **Name** and **Industry** fields.
+
+### **2. Filtering with WHERE Clause**
+Retrieve all **Contact** records where the **LastName** is "Smith" and the **Email** is not null.
+
+### **3. Sorting with ORDER BY**
+Fetch the top 10 **Opportunity** records ordered by **CloseDate** in descending order.
+
+### **4. Limiting Results**
+Get only **5** recently modified **Case** records.
+
+### **5. Using LIKE for Partial Matches**
+Find all **Lead** records where the **Company** name contains "Tech".
+
+---
+
+## **🔹 Intermediate SOQL Exercises**
+### **6. Querying Related Records (Parent-to-Child)**
+Retrieve all **Account** records along with their related **Contacts** (using a **subquery**).
+
+### **7. Querying Related Records (Child-to-Parent)**
+Fetch all **Opportunity** records and include the **Account Name** in the results.
+
+### **8. Using IN and NOT IN Operators**
+Find all **Contacts** where the **AccountId** is in a given list of Account IDs.
+
+### **9. Using Aggregate Functions (COUNT, SUM, AVG)**
+Calculate the **total number of Contacts** per **Account**.
+
+### **10. Using GROUP BY with HAVING**
+Find **Accounts** that have **more than 5 Contacts**.
+
+---
+
+## **🔹 Advanced SOQL Exercises**
+### **11. Querying with Semi-Joins (IN)**
+Retrieve all **Contacts** where the **Account** has an **Active__c** checkbox set to `true`.
+
+### **12. Querying with Anti-Joins (NOT IN)**
+Find all **Leads** that **do not** have a related **Opportunity**.
+
+### **13. Using Date Functions (TODAY, LAST_N_DAYS)**
+Fetch all **Tasks** due **today** or in the **last 7 days**.
+
+### **14. Dynamic SOQL with Bind Variables**
+Write a dynamic SOQL query that retrieves **Opportunities** based on a user-provided **StageName**.
+
+### **15. Using FOR UPDATE (Locking Records)**
+Write a SOQL query that locks **Account** records before updating them in a transaction.
+
+---
+
+## **🔹 Challenging SOQL Exercises (Expert)**
+### **16. Querying Polymorphic Relationships**
+Fetch all **Event** records where the **WhoId** (Contact/Lead) is a **Contact** with a specific **Email**.
+
+### **17. Using OFFSET for Pagination**
+Retrieve **50 Accounts** starting from the **11th record** (for pagination).
+
+### **18. Querying with TYPEOF (Salesforce DX)**
+Write a query that retrieves **Case** records and dynamically checks if the **Parent** is an **Account** or **Opportunity**.
+
+### **19. Using WITH SECURITY_ENFORCED**
+Write a query that enforces **field-level security** while fetching **Opportunity** records.
+
+### **20. SOQL for Loop (Bulk Query Handling)**
+Write a **SOQL for loop** to process **1,000+ Contact** records in batches.
+
+---
+
+## **🔹 Bonus: Real-World Scenarios**
+### **21. Finding Duplicate Records**
+Write a query to find **duplicate Contacts** based on **Email**.
+
+### **22. Querying RecordType-Specific Data**
+Fetch all **Cases** where the **RecordType** is "Support".
+
+### **23. Using SOSL (Salesforce Object Search Language)**
+Write a **SOSL** query to search for "John" across **Contacts**, **Leads**, and **Users**.
+
+### **24. Querying Big Objects**
+Write a SOQL query to fetch records from a **Big Object** (e.g., **EventLogFile**).
+
+### **25. Using SOQL in Apex Triggers**
+Write a **trigger** that queries **OpportunityLineItems** when an **Opportunity** is updated.
+
+---
+
+### **📌 Tips for Practicing SOQL:**
+✅ Use **Developer Console** or **Workbench** to test queries.  
+✅ Try **querying different standard and custom objects**.  
+✅ Experiment with **joins, subqueries, and aggregate functions**.  
+✅ Learn **query optimization** (e.g., **SELECTIVE** queries).  
+
+Would you like solutions to any of these? 😊
