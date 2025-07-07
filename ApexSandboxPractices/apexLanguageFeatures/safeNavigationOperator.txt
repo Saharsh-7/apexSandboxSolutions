@@ -1,0 +1,27 @@
+public String getAccountBillingCityWithSafeNavigation(List<Account> accounts){
+   // Code here
+/*
+Implement the method getAccountBillingCityWithSafeNavigation, which accepts a list of accounts as an input and returns the BillingCity in upper case of the first account in the list. Use the Safe Navigation (?.) to ensure null is returned in case the BillingCity is null.
+
+Given the following test code:
+
+List<Account> acts = new ListList<Account>();
+acts.add(new Account(Name = 'Acme', BillingCity = 'Chicago'));
+acts.add(new Account(Name = 'Dove', BillingCity = 'Boston'));
+String result = getAccountBillingCityWithSafeNavigation(acts);
+result should be 'CHICAGO'
+
+*/
+    //  return accounts?.get[0]?.BillingCity?.toUpperCase();
+return accounts?.get(0)?.BillingCity?.toUpperCase();
+/*
+Explanation:
+accounts?.get(0) - First checks if accounts is null before trying to access the first element
+
+?.BillingCity - Then checks if the first account is null before accessing BillingCity
+
+?.toUpperCase() - Finally checks if BillingCity is null before converting to uppercase
+*/
+
+
+}
