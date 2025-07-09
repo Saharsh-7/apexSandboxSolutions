@@ -1,0 +1,30 @@
+{
+    "fileVersion": 0,
+    "serverMaxRevisionCounter": 39,
+    "sourceMembers": {
+        "Profile__Admin": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 38,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__futureMethodDemo": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 2,
+            "lastRetrievedFromServer": 2,
+            "isNameObsolete": false
+        },
+        "ApexClass__queueableDemo": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 39,
+            "lastRetrievedFromServer": 39,
+            "isNameObsolete": false
+        },
+        "ApexClass__batchableDemo": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 34,
+            "lastRetrievedFromServer": 34,
+            "isNameObsolete": false
+        }
+    }
+}
