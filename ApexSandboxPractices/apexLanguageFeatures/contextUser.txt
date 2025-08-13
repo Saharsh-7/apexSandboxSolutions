@@ -1,0 +1,20 @@
+public Map<String,String> getContextUserInformation(){
+    //code here
+    /*
+   Implement the method getContextUserInformation(), which returns a Map of the current logged in user's (context user's) UserName, ProfileId, EmailId, and Type as keys and their field values as corresponding values in the map. 
+
+Given the following sample code:
+
+Map<String,String> userMap = getConte 
+    
+    */
+    // here we used UserInfo class 
+    Map<String,String> userLoginInfo = new Map<String,String>();
+    userLoginInfo.put('EmailId',userInfo.getUserEmail());
+    userLoginInfo.put('ProfileId',userInfo.getProfileId());
+    userLoginInfo.put('Type',userInfo.getUserType());
+    userLoginInfo.put('UserName',userInfo.getUserName());
+
+    return userLoginInfo;
+
+}
