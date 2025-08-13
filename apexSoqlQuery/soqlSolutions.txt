@@ -1,0 +1,119 @@
+SOQL Practice Assignment Sheet (Beginner to Advanced)
+Powered by Salesforce Gyaan
+
+
+
+📝 Instructions:
+- Complete each question in your Developer Org using Developer Console or VS Code.
+- Use Anonymous Apex window to test the SOQL queries if needed.
+- Take note of what each query returns and try modifying them to learn deeper.
+- Save your queries for revision and interviews.
+
+
+
+📌 100 SOQL Assignment Questions:
+1. Get all Contacts where LastName is 'Smith'.
+select lastName from contact where lastname = 'Smith'
+2. List all Opportunities with StageName = 'Closed Won'.
+select stagename from opportunity where stageName = 'closed won'
+3. Retrieve all Leads with Company name starting with 'A'.
+select name from lead where name like 'a%'
+4. Fetch all Users who are active.
+select name,id from user where isActive = true
+5. Get all Cases where Status is not 'Closed'.
+select accountid,casenumber from case where not status = 'closed' 
+6. List all Accounts sorted by Name.
+7. Fetch top 5 Accounts using LIMIT.
+8. Find all Contacts with email containing 'gmail'.
+9. List all Opportunities created in the last 30 days.
+10. Fetch all Account records.
+11. Get all Contacts where LastName is 'Smith'.
+12. List all Opportunities with StageName = 'Closed Won'.
+13. Retrieve all Leads with Company name starting with 'A'.
+14. Fetch all Users who are active.
+15. Get all Cases where Status is not 'Closed'.
+16. List all Accounts sorted by Name.
+17. Fetch top 5 Accounts using LIMIT.
+18. Find all Contacts with email containing 'gmail'.
+19. List all Opportunities created in the last 30 days.
+20. Fetch all Account records.
+21. Get all Contacts where LastName is 'Smith'.
+22. List all Opportunities with StageName = 'Closed Won'.
+23. Retrieve all Leads with Company name starting with 'A'.
+24. Fetch all Users who are active.
+25. Get all Cases where Status is not 'Closed'.
+26. List all Accounts sorted by Name.
+27. Fetch top 5 Accounts using LIMIT.
+28. Find all Contacts with email containing 'gmail'.
+29. List all Opportunities created in the last 30 days.
+30. Fetch all Account records.
+31. List Contacts whose Accounts are in the 'Banking' industry.
+32. Get all Opportunities where Amount > 50000 and close date is next month.
+33. Retrieve all Contacts along with their Account Names.
+34. Fetch all Cases grouped by Priority using aggregate function.
+35. Find total Opportunity Amount grouped by AccountId.
+36. List all Leads created by current user using UserId.
+37. Get top 10 Opportunities by Amount using ORDER BY.
+38. Find all Tasks that are overdue and not completed.
+39. Fetch Accounts with null Industry field.
+40. Fetch all Accounts with more than 5 Opportunities using subquery.
+41. List Contacts whose Accounts are in the 'Banking' industry.
+42. Get all Opportunities where Amount > 50000 and close date is next month.
+43. Retrieve all Contacts along with their Account Names.
+44. Fetch all Cases grouped by Priority using aggregate function.
+45. Find total Opportunity Amount grouped by AccountId.
+46. List all Leads created by current user using UserId.
+47. Get top 10 Opportunities by Amount using ORDER BY.
+48. Find all Tasks that are overdue and not completed.
+49. Fetch Accounts with null Industry field.
+50. Fetch all Accounts with more than 5 Opportunities using subquery.
+51. List Contacts whose Accounts are in the 'Banking' industry.
+52. Get all Opportunities where Amount > 50000 and close date is next month.
+53. Retrieve all Contacts along with their Account Names.
+54. Fetch all Cases grouped by Priority using aggregate function.
+55. Find total Opportunity Amount grouped by AccountId.
+56. List all Leads created by current user using UserId.
+57. Get top 10 Opportunities by Amount using ORDER BY.
+58. Find all Tasks that are overdue and not completed.
+59. Fetch Accounts with null Industry field.
+60. Fetch all Accounts with more than 5 Opportunities using subquery.
+61. List Contacts whose Accounts are in the 'Banking' industry.
+62. Get all Opportunities where Amount > 50000 and close date is next month.
+63. Retrieve all Contacts along with their Account Names.
+64. Fetch all Cases grouped by Priority using aggregate function.
+65. Find total Opportunity Amount grouped by AccountId.
+66. List all Leads created by current user using UserId.
+67. Get top 10 Opportunities by Amount using ORDER BY.
+68. Find all Tasks that are overdue and not completed.
+69. Fetch Accounts with null Industry field.
+70. Fetch all Accounts with more than 5 Opportunities using subquery.
+71. Retrieve Opportunities with related Account and Owner names.
+72. List Contacts from Accounts that have no related Opportunities.
+73. Find average Opportunity amount grouped by StageName.
+74. Use IN clause to get Leads with LeadSource in ('Web', 'Phone').
+75. Fetch Accounts created this year and sort by CreatedDate DESC.
+76. List Opportunities where the Account's Industry is not null.
+77. Count number of Contacts for each Account and display those with more than 5 Contacts.
+78. Fetch all Opportunities along with Parent Account and Owner's Email.
+79. List all child records (Contacts) for a parent Account in one query.
+80. Get all Accounts having more than 3 related Contacts using HAVING clause.
+81. Retrieve Opportunities with related Account and Owner names.
+82. List Contacts from Accounts that have no related Opportunities.
+83. Find average Opportunity amount grouped by StageName.
+84. Use IN clause to get Leads with LeadSource in ('Web', 'Phone').
+85. Fetch Accounts created this year and sort by CreatedDate DESC.
+86. List Opportunities where the Account's Industry is not null.
+87. Count number of Contacts for each Account and display those with more than 5 Contacts.
+88. Fetch all Opportunities along with Parent Account and Owner's Email.
+89. List all child records (Contacts) for a parent Account in one query.
+90. Get all Accounts having more than 3 related Contacts using HAVING clause.
+91. Retrieve Opportunities with related Account and Owner names.
+92. List Contacts from Accounts that have no related Opportunities.
+93. Find average Opportunity amount grouped by StageName.
+94. Use IN clause to get Leads with LeadSource in ('Web', 'Phone').
+95. Fetch Accounts created this year and sort by CreatedDate DESC.
+96. List Opportunities where the Account's Industry is not null.
+97. Count number of Contacts for each Account and display those with more than 5 Contacts.
+98. Fetch all Opportunities along with Parent Account and Owner's Email.
+99. List all child records (Contacts) for a parent Account in one query.
+100. Get all Accounts having more than 3 related Contacts using HAVING clause.
