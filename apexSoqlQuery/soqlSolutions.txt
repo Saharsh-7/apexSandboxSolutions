@@ -23,10 +23,15 @@ select name,id from user where isActive = true
 5. Get all Cases where Status is not 'Closed'.
 select accountid,casenumber from case where not status = 'closed' 
 6. List all Accounts sorted by Name.
+select id,name from account order by name
 7. Fetch top 5 Accounts using LIMIT.
+select id,name from account order by name limit 5
 8. Find all Contacts with email containing 'gmail'.
+select lastname,email from contact where email like '%gmail'
 9. List all Opportunities created in the last 30 days.
+select accountid from opportunity where createddate = last_n_days:30
 10. Fetch all Account records.
+select id,name from account
 11. Get all Contacts where LastName is 'Smith'.
 12. List all Opportunities with StageName = 'Closed Won'.
 13. Retrieve all Leads with Company name starting with 'A'.
