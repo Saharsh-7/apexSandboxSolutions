@@ -32,15 +32,17 @@ select lastname,email from contact where email like '%gmail'
 select accountid from opportunity where createddate = last_n_days:30
 10. Fetch all Account records.
 select id,name from account
-11. Get all Contacts where LastName is 'Smith'.
-12. List all Opportunities with StageName = 'Closed Won'.
-13. Retrieve all Leads with Company name starting with 'A'.
-14. Fetch all Users who are active.
-15. Get all Cases where Status is not 'Closed'.
-16. List all Accounts sorted by Name.
-17. Fetch top 5 Accounts using LIMIT.
-18. Find all Contacts with email containing 'gmail'.
-19. List all Opportunities created in the last 30 days.
+(11 to 30 are repetated)
+------------------------------------------
+11. Get all Contacts where LastName is 'Smith'.(Repeated)
+12. List all Opportunities with StageName = 'Closed Won'.(Repeated)
+13. Retrieve all Leads with Company name starting with 'A'.(Repeated)
+14. Fetch all Users who are active.(Repeated)
+15. Get all Cases where Status is not 'Closed'.(Repeated)
+16. List all Accounts sorted by Name.(Repeated)
+17. Fetch top 5 Accounts using LIMIT.(Repeated)
+18. Find all Contacts with email containing 'gmail'.(Repeated)
+19. List all Opportunities created in the last 30 days.(Repeated)
 20. Fetch all Account records.
 21. Get all Contacts where LastName is 'Smith'.
 22. List all Opportunities with StageName = 'Closed Won'.
@@ -52,11 +54,17 @@ select id,name from account
 28. Find all Contacts with email containing 'gmail'.
 29. List all Opportunities created in the last 30 days.
 30. Fetch all Account records.
+-------------------------------------------------
 31. List Contacts whose Accounts are in the 'Banking' industry.
+select industry,name,(select firstname,lastname from contacts) from account where industry = 'Banking'
 32. Get all Opportunities where Amount > 50000 and close date is next month.
+select accountid, amount from opportunity where amount > 50000 and closeDate = next_month
 33. Retrieve all Contacts along with their Account Names.
+select name,(select firstname,lastname from contacts) from account
 34. Fetch all Cases grouped by Priority using aggregate function.
+select count(caseNumber),priority from case group by priority 
 35. Find total Opportunity Amount grouped by AccountId.
+select count(accountid),amount from opportunity group by accountid
 36. List all Leads created by current user using UserId.
 37. Get top 10 Opportunities by Amount using ORDER BY.
 38. Find all Tasks that are overdue and not completed.

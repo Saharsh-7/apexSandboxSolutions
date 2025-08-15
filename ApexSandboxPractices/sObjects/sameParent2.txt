@@ -1,0 +1,22 @@
+public Boolean sameParent(Account acc, Contact con, Opportunity opp) {
+    //code here
+    /*
+    Implement the method sameParent that takes as input an account acc, a contact con, and an opportunity opp and returns true if both the opportunity and contact have the given account as the parent.
+
+Given the following test code:
+
+
+Account acc = new Account(Id = '0018c00002CQU9EAAX');
+Contact con = new Contact(AccountId = acc.Id);
+Opportunity opp = new Opportunity(AccountId = acc.Id);
+
+The method call sameParent(acc, con, opp) returns true because both the contact and the opportunity have the same parent account.
+    */
+    if (acc == null || String.isBlank(acc.Id) ||
+        con == null || String.isBlank(con.AccountId) ||
+        opp == null || String.isBlank(opp.AccountId)) {
+        return false;
+    }
+    // Check if both share the given account as parent
+    return con.AccountId == acc.Id && opp.AccountId == acc.Id;
+}
