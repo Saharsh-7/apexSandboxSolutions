@@ -1,7 +1,5 @@
-SOQL Practice Assignment Sheet (Beginner to Advanced)
+SOQL Practice Assignment Solutions (Beginner to Advanced)
 Powered by Salesforce Gyaan
-
-
 
 📝 Instructions:
 - Complete each question in your Developer Org using Developer Console or VS Code.
@@ -9,124 +7,135 @@ Powered by Salesforce Gyaan
 - Take note of what each query returns and try modifying them to learn deeper.
 - Save your queries for revision and interviews.
 
+📌 Unique SOQL Assignment Questions:
 
-
-📌 100 SOQL Assignment Questions:
 1. Get all Contacts where LastName is 'Smith'.
-select lastName from contact where lastname = 'Smith'
+SELECT Id, LastName FROM Contact WHERE LastName = 'Smith'
+
 2. List all Opportunities with StageName = 'Closed Won'.
-select stagename from opportunity where stageName = 'closed won'
+SELECT Id, Name, StageName FROM Opportunity WHERE StageName = 'Closed Won'
+
 3. Retrieve all Leads with Company name starting with 'A'.
-select name from lead where name like 'a%'
+SELECT Id, Name, Company FROM Lead WHERE Company LIKE 'A%'
+
 4. Fetch all Users who are active.
-select name,id from user where isActive = true
+SELECT Id, Name, Username FROM User WHERE IsActive = true
+
 5. Get all Cases where Status is not 'Closed'.
-select accountid,casenumber from case where not status = 'closed' 
+SELECT Id, CaseNumber, Status FROM Case WHERE Status != 'Closed'
+
 6. List all Accounts sorted by Name.
-select id,name from account order by name
+SELECT Id, Name FROM Account ORDER BY Name
+
 7. Fetch top 5 Accounts using LIMIT.
-select id,name from account order by name limit 5
+SELECT Id, Name FROM Account ORDER BY CreatedDate DESC LIMIT 5
+
 8. Find all Contacts with email containing 'gmail'.
-select lastname,email from contact where email like '%gmail'
+SELECT Id, LastName, Email FROM Contact WHERE Email LIKE '%gmail%'
+
 9. List all Opportunities created in the last 30 days.
-select accountid from opportunity where createddate = last_n_days:30
+SELECT Id, Name, CreatedDate FROM Opportunity WHERE CreatedDate = LAST_N_DAYS:30
+
 10. Fetch all Account records.
-select id,name from account
-(11 to 30 are repetated)
-------------------------------------------
-11. Get all Contacts where LastName is 'Smith'.(Repeated)
-12. List all Opportunities with StageName = 'Closed Won'.(Repeated)
-13. Retrieve all Leads with Company name starting with 'A'.(Repeated)
-14. Fetch all Users who are active.(Repeated)
-15. Get all Cases where Status is not 'Closed'.(Repeated)
-16. List all Accounts sorted by Name.(Repeated)
-17. Fetch top 5 Accounts using LIMIT.(Repeated)
-18. Find all Contacts with email containing 'gmail'.(Repeated)
-19. List all Opportunities created in the last 30 days.(Repeated)
-20. Fetch all Account records.
-21. Get all Contacts where LastName is 'Smith'.
-22. List all Opportunities with StageName = 'Closed Won'.
-23. Retrieve all Leads with Company name starting with 'A'.
-24. Fetch all Users who are active.
-25. Get all Cases where Status is not 'Closed'.
-26. List all Accounts sorted by Name.
-27. Fetch top 5 Accounts using LIMIT.
-28. Find all Contacts with email containing 'gmail'.
-29. List all Opportunities created in the last 30 days.
-30. Fetch all Account records.
--------------------------------------------------
+SELECT Id, Name FROM Account
+
 31. List Contacts whose Accounts are in the 'Banking' industry.
-select industry,name,(select firstname,lastname from contacts) from account where industry = 'Banking'
+SELECT Id, LastName, Account.Name FROM Contact WHERE Account.Industry = 'Banking'
+
 32. Get all Opportunities where Amount > 50000 and close date is next month.
-select accountid, amount from opportunity where amount > 50000 and closeDate = next_month
+SELECT Id, Name, Amount, CloseDate FROM Opportunity 
+WHERE Amount > 50000 AND CloseDate = NEXT_MONTH
+
 33. Retrieve all Contacts along with their Account Names.
-select name,(select firstname,lastname from contacts) from account
+SELECT Id, LastName, Account.Name FROM Contact
+
 34. Fetch all Cases grouped by Priority using aggregate function.
-select count(caseNumber),priority from case group by priority 
+SELECT Priority, COUNT(Id) totalCases FROM Case GROUP BY Priority
+
 35. Find total Opportunity Amount grouped by AccountId.
-select count(accountid),amount from opportunity group by accountid
+SELECT AccountId, SUM(Amount) totalAmount FROM Opportunity GROUP BY AccountId
+
 36. List all Leads created by current user using UserId.
+SELECT Id, Name, Company FROM Lead WHERE CreatedById = :UserInfo.getUserId()
+
 37. Get top 10 Opportunities by Amount using ORDER BY.
+SELECT Id, Name, Amount FROM Opportunity 
+WHERE Amount != NULL ORDER BY Amount DESC LIMIT 10
+
 38. Find all Tasks that are overdue and not completed.
+SELECT Id, Subject, ActivityDate, Status FROM Task 
+WHERE Status != 'Completed' AND ActivityDate < TODAY
+
 39. Fetch Accounts with null Industry field.
+SELECT Id, Name, Industry FROM Account WHERE Industry = NULL
+
 40. Fetch all Accounts with more than 5 Opportunities using subquery.
-41. List Contacts whose Accounts are in the 'Banking' industry.
-42. Get all Opportunities where Amount > 50000 and close date is next month.
-43. Retrieve all Contacts along with their Account Names.
-44. Fetch all Cases grouped by Priority using aggregate function.
-45. Find total Opportunity Amount grouped by AccountId.
-46. List all Leads created by current user using UserId.
-47. Get top 10 Opportunities by Amount using ORDER BY.
-48. Find all Tasks that are overdue and not completed.
-49. Fetch Accounts with null Industry field.
-50. Fetch all Accounts with more than 5 Opportunities using subquery.
-51. List Contacts whose Accounts are in the 'Banking' industry.
-52. Get all Opportunities where Amount > 50000 and close date is next month.
-53. Retrieve all Contacts along with their Account Names.
-54. Fetch all Cases grouped by Priority using aggregate function.
-55. Find total Opportunity Amount grouped by AccountId.
-56. List all Leads created by current user using UserId.
-57. Get top 10 Opportunities by Amount using ORDER BY.
-58. Find all Tasks that are overdue and not completed.
-59. Fetch Accounts with null Industry field.
-60. Fetch all Accounts with more than 5 Opportunities using subquery.
-61. List Contacts whose Accounts are in the 'Banking' industry.
-62. Get all Opportunities where Amount > 50000 and close date is next month.
-63. Retrieve all Contacts along with their Account Names.
-64. Fetch all Cases grouped by Priority using aggregate function.
-65. Find total Opportunity Amount grouped by AccountId.
-66. List all Leads created by current user using UserId.
-67. Get top 10 Opportunities by Amount using ORDER BY.
-68. Find all Tasks that are overdue and not completed.
-69. Fetch Accounts with null Industry field.
-70. Fetch all Accounts with more than 5 Opportunities using subquery.
+SELECT Id, Name, (SELECT Id FROM Opportunities) 
+FROM Account 
+WHERE Id IN (SELECT AccountId FROM Opportunity GROUP BY AccountId HAVING COUNT(Id) > 5)
+
 71. Retrieve Opportunities with related Account and Owner names.
+SELECT Id, Name, Account.Name, Owner.Name FROM Opportunity
+
 72. List Contacts from Accounts that have no related Opportunities.
+SELECT Id, LastName FROM Contact 
+WHERE AccountId NOT IN (SELECT AccountId FROM Opportunity WHERE AccountId != NULL)
+
 73. Find average Opportunity amount grouped by StageName.
+SELECT StageName, AVG(Amount) averageAmount FROM Opportunity GROUP BY StageName
+
 74. Use IN clause to get Leads with LeadSource in ('Web', 'Phone').
+SELECT Id, Name, LeadSource FROM Lead WHERE LeadSource IN ('Web', 'Phone')
+
 75. Fetch Accounts created this year and sort by CreatedDate DESC.
+SELECT Id, Name, CreatedDate FROM Account 
+WHERE CreatedDate = THIS_YEAR ORDER BY CreatedDate DESC
+
 76. List Opportunities where the Account's Industry is not null.
+SELECT Id, Name, Account.Industry FROM Opportunity WHERE Account.Industry != NULL
+
 77. Count number of Contacts for each Account and display those with more than 5 Contacts.
+SELECT AccountId, COUNT(Id) contactCount FROM Contact 
+GROUP BY AccountId HAVING COUNT(Id) > 5
+
 78. Fetch all Opportunities along with Parent Account and Owner's Email.
+SELECT Id, Name, Account.Name, Owner.Email FROM Opportunity
+
 79. List all child records (Contacts) for a parent Account in one query.
+SELECT Id, Name, (SELECT Id, LastName FROM Contacts) FROM Account
+
 80. Get all Accounts having more than 3 related Contacts using HAVING clause.
+SELECT AccountId, COUNT(Id) contactCount FROM Contact 
+GROUP BY AccountId HAVING COUNT(Id) > 3
+
 81. Retrieve Opportunities with related Account and Owner names.
+-- Same as question 71
+
 82. List Contacts from Accounts that have no related Opportunities.
+-- Same as question 72
+
 83. Find average Opportunity amount grouped by StageName.
+-- Same as question 73
+
 84. Use IN clause to get Leads with LeadSource in ('Web', 'Phone').
+-- Same as question 74
+
 85. Fetch Accounts created this year and sort by CreatedDate DESC.
+-- Same as question 75
+
 86. List Opportunities where the Account's Industry is not null.
+-- Same as question 76
+
 87. Count number of Contacts for each Account and display those with more than 5 Contacts.
+-- Same as question 77
+
 88. Fetch all Opportunities along with Parent Account and Owner's Email.
+-- Same as question 78
+
 89. List all child records (Contacts) for a parent Account in one query.
+-- Same as question 79
+
 90. Get all Accounts having more than 3 related Contacts using HAVING clause.
-91. Retrieve Opportunities with related Account and Owner names.
-92. List Contacts from Accounts that have no related Opportunities.
-93. Find average Opportunity amount grouped by StageName.
-94. Use IN clause to get Leads with LeadSource in ('Web', 'Phone').
-95. Fetch Accounts created this year and sort by CreatedDate DESC.
-96. List Opportunities where the Account's Industry is not null.
-97. Count number of Contacts for each Account and display those with more than 5 Contacts.
-98. Fetch all Opportunities along with Parent Account and Owner's Email.
-99. List all child records (Contacts) for a parent Account in one query.
-100. Get all Accounts having more than 3 related Contacts using HAVING clause.
+-- Same as question 80
+
+Note: Questions 11-30, 41-70, and 91-100 were duplicates of questions 1-10 and 31-40, and have been removed from this list to avoid repetition.
